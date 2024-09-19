@@ -1,3 +1,8 @@
 {
-  "extends": "astro/tsconfigs/strict"
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "types": ["node", "react", "react-dom", "unist", "mdast", "hast"],
+    "typeRoots": ["node_modules/@types"],
+    "moduleResolution": "node",
+  }
 }

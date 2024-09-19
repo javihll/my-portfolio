@@ -1,16 +1,29 @@
 ---
-
+import Header from '../components/Header.astro';
+import HeroSection from '../components/HeroSection.astro';
+import AboutMe from '../components/AboutMe.astro';
+import Projects from '../components/Projects.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { Link } from 'astro:ui'; // Agrega esta línea si necesitas usar Link en este archivo
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<html lang="es">
+<head>
+  <!-- ... resto del código ... -->
+</head>
+<body>
+  <Header client:load />
+  <main>
+    <HeroSection client:load />
+    <AboutMe client:load />
+    <Projects client:load />
+    <ContactForm client:load />
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Juan - Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="https://unpkg.com/@astrojs/react/client@latest"></script>
+</body>
 </html>

@@ -1,0 +1,67 @@
+---
+const title = "Hola, soy Juan";
+const subtitle = "Desarrollador Full Stack apasionado por crear soluciones innovadoras.";
+---
+
+<section id="hero" class="hero-section">
+  <h1>{title}</h1>
+  <p>{subtitle}</p>
+  <button>Explorar más</button>
+
+  <div class="social-links">
+    <a href="#" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+    <a href="#" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+    <a href="#" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-twitter"></i></a>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to bottom, #ff69b4, #ffe6f2);
+    color: white;
+    text-align: center;
+  }
+
+  .hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-section p {
+    max-width: 600px;
+    margin-bottom: 2rem;
+  }
+
+  .hero-section button {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .hero-section button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .social-links {
+    margin-top: 2rem;
+  }
+
+  .social-links a {
+    margin: 0 0.5rem;
+    color: white;
+    font-size: 1.25rem;
+    transition: transform 0.3s ease;
+  }
+
+  .social-links a:hover {
+    transform: translateY(-5px);
+  }
+</style>

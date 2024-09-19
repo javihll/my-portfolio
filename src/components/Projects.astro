@@ -1,0 +1,102 @@
+---
+const projects = [
+  {
+    title: "Proyecto 1",
+    description: "Descripción del proyecto 1",
+    image: "/project1.jpg"
+  },
+  {
+    title: "Proyecto 2",
+    description: "Descripción del proyecto 2",
+    image: "/project2.jpg"
+  },
+  {
+    title: "Proyecto 3",
+    description: "Descripción del proyecto 3",
+    image: "/project3.jpg"
+  }
+];
+---
+
+<section id="projects" class="projects-section">
+  <h2>Mis proyectos</h2>
+  <div class="project-grid">
+    {projects.map((project, index) => (
+      <div class={`project ${index % 2 === 0 ? 'left' : 'right'}`}>
+        <img src={project.image} alt={project.title} />
+        <div class="project-info">
+          <h3>{project.title}</h3>
+          <p>{project.description}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .projects-section {
+    padding: 5rem 0;
+    background-color: #fff;
+  }
+
+  .projects-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 3rem;
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  .project {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .project:hover {
+    transform: translateY(-10px);
+  }
+
+  .project img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .project:hover img {
+    transform: scale(1.05);
+  }
+
+  .project-info {
+    padding: 1.5rem;
+    background-color: white;
+  }
+
+  .project-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-info p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #666;
+  }
+
+  .left {
+    grid-column: span 2;
+  }
+
+  .right {
+    grid-column: span 1;
+  }
+</style>
